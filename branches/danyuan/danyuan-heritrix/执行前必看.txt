@@ -1,0 +1,7 @@
+采用heritrix3.3.0版本打包成可执行的包 包含tomcat不必另行发布
+启动 start.bat 端口8899
+
+登录 https://localhost:8899/engine
+admin admin
+
+用户端口修改在 start.bat 里面  -a  admin:admin -p 8899

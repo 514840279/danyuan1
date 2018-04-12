@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-1-2 20:06:40 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="org.danyuan.utils.po.down.Alink" table="xuexi111">
+		<id name="id" type="java.lang.String">
+			<column name="ID" />
+			<generator class="uuid" />
+		</id>
+		<property name="type" type="java.lang.String">
+			<column name="TYPE" />
+		</property>
+		<property name="href" type="java.lang.String">
+			<column name="HREF" length="1024"/>
+		</property>
+		<property name="title" type="java.lang.String">
+			<column name="TITLE"  length="1024"/>
+		</property>
+		<property name="target" type="java.lang.String">
+			<column name="TARGET"  length="1024"/>
+		</property>
+		<property name="text" type="java.lang.String">
+			<column name="TEXT"  length="1024"/>
+		</property>
+		<property name="flag" type="int">
+			<column name="FLAG" />
+		</property>
+		<property name="times" type="int">
+			<column name="TIMES" />
+		</property>
+		<property name="style" type="java.lang.String">
+			<column name="STYLE" />
+		</property>
+		<property name="alt" type="java.lang.String">
+			<column name="ALT" />
+		</property>
+
+		<property name="width" type="java.lang.String">
+			<column name="width" />
+		</property>
+		<property name="height" type="java.lang.String">
+			<column name="height" />
+		</property>
+		<property name="tagName" type="java.lang.String">
+			<column name="tagName"  length="1024"/>
+		</property>
+		<property name="parrent" type="java.lang.String">
+			<column name="parrent" length="1024"/>
+		</property>
+		<property name="rel" type="java.lang.String">
+			<column name="rel" />
+		</property>
+		<property name="insertDate" type="timestamp">
+			<column name="insert_date" />
+		</property>
+	</class>
+</hibernate-mapping>

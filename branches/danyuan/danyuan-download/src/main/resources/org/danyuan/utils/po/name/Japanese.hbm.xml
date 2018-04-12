@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-5 8:16:08 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.danyuan.utils.po.name.Japanese" table="日本姓名">
+        <id name="name" type="java.lang.String">
+            <column name="NAME" length="50"/>
+             <generator class="assigned" />
+        </id>
+        <property name="origin" type="java.lang.String">
+            <column name="ORIGIN" length="1024"/>
+        </property>
+        <property name="insertDatetime" type="timestamp" update="false"  >
+            <column name="INSERT_DATETIME" />
+        </property>
+        <property name="updateDatetime" type="timestamp">
+            <column name="UPDATE_DATETIME" />
+        </property>
+    </class>
+</hibernate-mapping>

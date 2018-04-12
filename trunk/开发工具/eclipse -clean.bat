@@ -1,0 +1,2 @@
+eclipse -clean;
+exit;

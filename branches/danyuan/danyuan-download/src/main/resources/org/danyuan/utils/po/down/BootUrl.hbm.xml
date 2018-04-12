@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-2-1 20:10:56 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.danyuan.utils.po.down.BootUrl" table="sys_booturl">
+        <id name="uuid" type="java.lang.String">
+            <column name="UUID" />
+            <generator class="uuid" />
+        </id>
+        <property name="bootUrl" type="java.lang.String">
+            <column name="BOOTURL" unique="true" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name"  />
+        </property>
+        <property name="charset" type="java.lang.String">
+            <column name="charset"  />
+        </property>
+        <property name="insertDate" type="timestamp">
+            <column name="insertDate"  />
+        </property>
+    </class>
+</hibernate-mapping>

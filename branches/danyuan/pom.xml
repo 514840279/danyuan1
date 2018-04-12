@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>tk.ainiyue.danyuan</groupId>
+	<artifactId>danyuan</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>danyuan</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<!-- 指明使用JDK8 -->
+		<java-version>1.8</java-version>
+		<!-- 指明使用utf-8编码 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<oracle.version />
+		<mysql.version />
+		<sqlite.version />
+		<hbase.version />
+
+	</properties>
+	<!-- 本地nexus倉庫組 -->
+	<repositories>
+		<!-- 远程仓库组 -->
+		<!-- oschina的maven仓库 -->
+<!-- 		<repository> -->
+<!-- 			<id>oschinaRepository</id> -->
+<!-- 			<name>local private nexus</name> -->
+<!-- 			<url>http://maven.oschina.net/content/groups/public/</url> -->
+<!-- 			<releases> -->
+<!-- 				<enabled>true</enabled> -->
+<!-- 			</releases> -->
+<!-- 			<snapshots> -->
+<!-- 				<enabled>true</enabled> -->
+<!-- 			</snapshots> -->
+<!-- 		</repository> -->
+	</repositories>
+	<!-- 指定maven plugin仓库 -->
+<!-- 	<pluginRepositories> -->
+<!-- 		<pluginRepository> -->
+<!-- 			<name>Mygroup</name> -->
+<!-- 			<id>localhost nexus</id> -->
+<!-- 			<url>http://localhost:8082/nexus/content/groups/Mygroup/</url> -->
+<!-- 		</pluginRepository> -->
+		<!-- oschina的maven plugin仓库 -->
+<!-- 		<pluginRepository> -->
+<!-- 			<id>oschinaPluginRepository</id> -->
+<!-- 			<name>local private nexus</name> -->
+<!-- 			<url>http://maven.oschina.net/content/groups/public/</url> -->
+<!-- 			<releases> -->
+<!-- 				<enabled>true</enabled> -->
+<!-- 			</releases> -->
+<!-- 			<snapshots> -->
+<!-- 				<enabled>false</enabled> -->
+<!-- 			</snapshots> -->
+<!-- 		</pluginRepository> -->
+<!-- 	</pluginRepositories> -->
+	<dependencies>
+		<!-- 数据库 oracle 11 -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.1.0</version>
+		</dependency>
+		<!-- 数据库 oracle 10 -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.oracle</groupId> -->
+		<!-- <artifactId>ojdbc14</artifactId> -->
+		<!-- <version>10.2.0.4.0</version> -->
+		<!-- </dependency> -->
+		<!-- 数据库 mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.38</version>
+		</dependency>
+		<!-- 数据库 sqlite -->
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.7.2</version>
+		</dependency>
+		<!-- 数据库 hbase -->
+		<dependency>
+			<groupId>org.apache.mahout.hbase</groupId>
+			<artifactId>hbase</artifactId>
+			<version>0.20.0</version>
+		</dependency>
+		<!-- H2数据库，用他做测试数据库比较方便，使用他的内存数据库模式 -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.179</version>
+		</dependency>
+		<!-- sql server数据库驱动 -->
+		<dependency>
+			<groupId>net.sourceforge.jtds</groupId>
+			<artifactId>jtds</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<!-- Derby -->
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<version>10.12.1.1</version>
+		</dependency>
+
+		<!-- 加入druid数据源依赖包 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.4</version>
+		</dependency>
+		<!-- 加入fastjson依赖包 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.37</version>
+		</dependency>
+
+		<!-- 加入slf4j依赖包 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
+		<!-- 这个包用于显示真实执行的sql -->
+		<dependency>
+			<groupId>com.googlecode.log4jdbc</groupId>
+			<artifactId>log4jdbc</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- 加入dom4j依赖包 -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+
+		<!-- 加入jstl依赖包 -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2.1-b03</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- io包 -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<!-- 加入fileupload依赖包 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3</version>
+		</dependency>
+
+		<!-- 加入POI核心依赖 -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.10-beta2</version>
+		</dependency>
+		<!-- 为POI支持Office Open XML -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.10-beta2</version>
+		</dependency>
+		<!-- 支持Word文档的操作 -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>3.10-beta2</version>
+		</dependency>
+
+		<!-- dbutils依赖包 -->
+		<dependency>
+			<groupId>commons-dbutils</groupId>
+			<artifactId>commons-dbutils</artifactId>
+			<version>1.5</version>
+		</dependency>
+
+		<!-- 加入javamelody依赖包 -->
+		<dependency>
+			<groupId>net.bull.javamelody</groupId>
+			<artifactId>javamelody-core</artifactId>
+			<version>1.47.0</version>
+		</dependency>
+		<!-- 加入quartz依赖包 -->
+		<dependency>
+			<groupId>org.opensymphony.quartz</groupId>
+			<artifactId>quartz-all</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<!-- 加入batik依赖包，用于highcharts导出图表 -->
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-codec</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<!-- 加入CXF依赖包 -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>2.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>2.7.7</version>
+		</dependency>
+		<!-- hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.0.6.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<!-- jsoup -->
+		<dependency>
+			<!-- jsoup HTML parser library @ http://jsoup.org/ -->
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+		<!-- ftp -->
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.4</version>
+		</dependency>
+
+		<!-- httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.1</version>
+		</dependency>
+		<!-- 短信發送 -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- 即時通信 -->
+		<dependency>
+			<groupId>io.socket</groupId>
+			<artifactId>socket.io-client</artifactId>
+			<version>0.6.2</version>
+		</dependency>
+		<!-- email -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<!-- 图片识别 -->
+		<dependency>
+			<groupId>com.sun.media</groupId>
+			<artifactId>jai_imageio</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.swinglabs</groupId>
+			<artifactId>swingx</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+		<!-- 测试 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<modules>
+		<module>danyuan-web</module>
+		<module>danyuan-utils</module>
+		<module>danyuan-manager</module>
+		<module>danyuan-third-api</module>
+		<module>danyuan-download</module>
+	</modules>
+	<build>
+		<finalName>danyuan</finalName>
+		<plugins>
+			<!-- 编译的时候使用JDK7和UTF8编码 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- 将源码打成jar包 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>true</addMavenDescriptor>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>org.danyuan.App</mainClass>
+						</manifest>
+					</archive>
+					<excludes>
+						<exclude>**/*.properties</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			
+			<!-- generate a source jar -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<!-- generate a javadoc jar -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-javadoc-plugin</artifactId> -->
+<!-- 				<version>2.10.1</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>attach-javadocs</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>jar</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
+			
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<!--这里要替换成jar包main方法所在类 -->
+							<mainClass>org.danyuan.App</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- 指定在打包节点执行jar包合并操作 -->
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- 配置Maven插件(mvn jetty:run可以运行项目) -->
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.1.0.RC1</version>
+				<configuration>
+					<!-- 指定访问端口 -->
+					<httpConnector>
+						<port>9999</port>
+					</httpConnector>
+					<!-- 间隔x扫描一次,实现热部署 -->
+					<scanIntervalSeconds>3</scanIntervalSeconds>
+					<!-- 编写类文件之后，是否自动重启jetty；可选后面两个值[manual|automatic] -->
+					<reload>manual</reload>
+					<!-- 指定关闭端口 -->
+					<stopPort>9999</stopPort>
+					<stopKey>stop-jetty-for-it</stopKey>
+					<webApp>
+						<!-- 指定项目路径(如果不写，则按照pom.xml里面的artifactId属性值配置)，访问路径为http://localhost:9999/sshe -->
+						<!-- 配置<contextPath>/sshe</contextPath>，则访问路径为http://localhost:9999/sshe -->
+						<!-- 配置<contextPath>/</contextPath>，则访问路径为http://localhost:9999 -->
+						<contextPath>/danyuan</contextPath>
+						<!-- 更改jetty默认webdefault.xml文件，主要修改了useFileMappedBuffer属性为false，使其不锁定静态文件 -->
+						<!-- 此文件在C盘\用户目录\.m2\repository\org\eclipse\jetty\jetty-webapp\9.1.0.RC1\找到jar包，打开jar包目录org\eclipse\jetty\webapp\目录中 -->
+						<defaultsDescriptor>webdefault.xml</defaultsDescriptor>
+					</webApp>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

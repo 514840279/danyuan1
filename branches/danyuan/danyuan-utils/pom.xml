@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tk.ainiyue.danyuan</groupId>
+		<artifactId>danyuan</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>danyuan-utils</artifactId>
+	<name>danyuan-utils</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<mybatis-generator.version>1.3.2</mybatis-generator.version>
+		<mybatis.version>3.0.3</mybatis.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>tw.edu.ntu.csie</groupId>
+			<artifactId>libsvm</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hankcs</groupId>
+			<artifactId>hanlp</artifactId>
+			<version>portable-1.2.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-core</artifactId>
+			<version>${mybatis-generator.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<finalName>danyuan-utils</finalName>
+
+ <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-dependency-plugin</artifactId>
+                                        <versionRange>[1.0.0,)</versionRange>
+                                        <goals>
+                                            <goal>copy</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+		<plugins>
+		
+
+
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.mybatis.generator</groupId> -->
+<!-- 				<artifactId>mybatis-generator-maven-plugin</artifactId> -->
+<!-- 				<version>${mybatis-generator.version}</version> -->
+<!-- 				<dependencies> -->
+<!-- 					数据库驱动 -->
+<!-- 					<dependency> -->
+<!-- 						<groupId>mysql</groupId> -->
+<!-- 						<artifactId>mysql-connector-java</artifactId> -->
+<!-- 						<version>5.1.38</version> -->
+<!-- 					</dependency> -->
+<!-- 					<dependency> -->
+<!-- 						<groupId>org.mybatis.generator</groupId> -->
+<!-- 						<artifactId>mybatis-generator-core</artifactId> -->
+<!-- 						<version>1.3.2</version> -->
+<!-- 					</dependency> -->
+<!-- 					<dependency> -->
+<!-- 						<groupId>org.mybatis</groupId> -->
+<!-- 						<artifactId>mybatis</artifactId> -->
+<!-- 						<version>3.2.2</version> -->
+<!-- 					</dependency> -->
+<!-- 				</dependencies> -->
+<!-- 				自动生成 -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>Generate MyBatis Artifacts</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>generate</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 				<configuration> -->
+<!-- 					<configurationFile>src/main/resources/config/mysqlGeneratorConfig.xml</configurationFile> -->
+<!-- 					<overwrite>true</overwrite> -->
+<!-- 					<jdbcDriver>com.mysql.jdbc.Driver</jdbcDriver> -->
+<!-- 					<jdbcURL>jdbc:mysql://localhost:3306/name?characterEncoding=utf8&amp;useSSL=true</jdbcURL> -->
+<!-- 					<jdbcUserId>root</jdbcUserId> -->
+<!-- 					<jdbcPassword>root</jdbcPassword> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
+
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>hibernate3-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<components>
+						<component>
+							<name>hbm2hbmxml</name>
+							<implementation>jdbcconfiguration</implementation>
+							<outputDirectory>target/generated-resources/hibernate3</outputDirectory>
+						</component>
+						<component>
+							<name>hbm2java</name>
+							<implementation>jdbcconfiguration</implementation>
+							<outputDirectory>target/generated-sources/hibernate3</outputDirectory>
+						</component>
+					</components>
+					<componentProperties>
+						<revengfile>src/main/resources/reveng.xml</revengfile>
+						<propertyfile>src/main/resources/hibernate.cfg.xml</propertyfile>
+						<packagename>com.whatever.domain</packagename>
+						<jdk5>true</jdk5>
+						<ejb3>false</ejb3>
+					</componentProperties>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>cglib</groupId>
+						<artifactId>cglib-nodep</artifactId>
+						<version>2.2.2</version>
+					</dependency>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>5.1.38</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+
+	</build>
+
+</project>

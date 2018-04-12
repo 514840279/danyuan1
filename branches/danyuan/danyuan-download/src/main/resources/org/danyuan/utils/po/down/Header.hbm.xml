@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-1-28 23:35:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.danyuan.utils.po.down.Header" table="sys_header">
+        <id name="uuid" type="java.lang.String">
+            <column name="UUID" />
+            <generator class="uuid" />
+        </id>
+        <property name="bootUrlUuid" type="java.lang.String">
+            <column name="bootUrlUuid" />
+        </property>
+        <property name="key" type="java.lang.String">
+            <column name="KEY_word" />
+        </property>
+        <property name="value" type="java.lang.String">
+            <column name="VALUE" />
+        </property>
+         <property name="head" type="java.lang.String">
+            <column name="head" />
+        </property>
+        <property name="insertDate" type="timestamp">
+            <column name="INSERTDATE" />
+        </property>
+        <property name="updateDate" type="timestamp">
+            <column name="UPDATEDATE" />
+        </property>
+    </class>
+</hibernate-mapping>
