@@ -39,7 +39,7 @@
 		<oracle.version>11.2.0.1.0</oracle.version>
 		<junit.version>4.12</junit.version>
 		<mail.version>1.5.0-b01</mail.version>
-		<poi.version>3.9</poi.version>
+		<poi.version>3.17</poi.version>
 		<log4j.version>1.2.17</log4j.version>
 		<jxl.version>2.6.12</jxl.version>
 
